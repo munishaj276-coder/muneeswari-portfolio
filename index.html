@@ -1,15 +1,301 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="J. Muneeswari — AI Engineer & Full Stack Developer (React.js). B.Tech AI & Data Science, Ramco Institute of Technology." />
-    <meta name="theme-color" content="#030014" />
-    <title>J. Muneeswari | AI Engineer & Full Stack Developer</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>J. Muneeswari | AI Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f5f7fb;--panel:#fff;--soft:#e8eefc;--ink:#0f1b33;--mute:#56637c;--line:#dde3ee;--a:#2455e0;--b:#0b7a85;--sh:rgba(15,27,51,.3);
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b1220;--panel:#131d33;--soft:#18264a;--ink:#e7ecf6;--mute:#93a0b8;--line:#25314b;--a:#7298ff;--b:#3cc4cb;--sh:rgba(0,0,0,.6)}}
+:root[data-theme="dark"]{--bg:#0b1220;--panel:#131d33;--soft:#18264a;--ink:#e7ecf6;--mute:#93a0b8;--line:#25314b;--a:#7298ff;--b:#3cc4cb;--sh:rgba(0,0,0,.6)}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+*{box-sizing:border-box;margin:0}
+body{background:var(--bg);color:var(--ink);font:400 17px/1.65 Inter,system-ui,sans-serif;overflow-x:hidden}
+h1,h2,h3,nav b,.stat b,.verdict,.mail,.face,.nm{font-family:Manrope,Inter,system-ui,sans-serif;letter-spacing:-.02em}
+a{color:inherit}:focus-visible{outline:2px solid var(--a);outline-offset:3px}
+#bar{position:fixed;top:0;left:0;height:3px;width:0;background:var(--a);z-index:40}
+nav{position:fixed;top:0;left:0;right:0;z-index:30;display:flex;justify-content:space-between;align-items:center;padding:calc(14px + env(safe-area-inset-top,0px)) 5vw 14px;background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+nav b{font-size:19px;font-weight:800}
+nav div{display:flex;gap:26px;align-items:center;font-size:15px}
+nav a{text-decoration:none;color:var(--mute);transition:color .2s}nav a:hover{color:var(--ink)}
+nav a.go{color:#fff;background:var(--a);padding:8px 18px;border-radius:999px;font-weight:500}
+@media(max-width:700px){nav div a:not(.go){display:none}}
+section{padding:110px 5vw;max-width:1200px;margin:auto}
+h2{font-size:clamp(32px,4.4vw,52px);font-weight:800;margin-bottom:34px;max-width:780px;line-height:1.1}
+#hero{max-width:none;min-height:100svh;display:grid;align-items:center;padding:120px 5vw 70px;position:relative;overflow:hidden}
+.floor{position:absolute;left:-20%;right:-20%;bottom:-10%;height:55%;background:linear-gradient(var(--line) 1px,transparent 1px) 0 0/60px 60px,linear-gradient(90deg,var(--line) 1px,transparent 1px) 0 0/60px 60px;transform:perspective(500px) rotateX(62deg);-webkit-mask:linear-gradient(transparent,#000 60%);mask:linear-gradient(transparent,#000 60%);opacity:.8}
+.hero-in{position:relative;max-width:1200px;margin:auto;width:100%;display:grid;grid-template-columns:1.05fr .95fr;gap:30px;align-items:center}
+.status{display:inline-flex;align-items:center;gap:10px;padding:7px 16px;border:1px solid var(--line);border-radius:999px;background:var(--panel);font-size:14px;color:var(--mute)}
+.status i{width:8px;height:8px;border-radius:50%;background:#1aa863;box-shadow:0 0 0 4px rgba(26,168,99,.2)}
+.nm{font-size:clamp(48px,7.4vw,104px);font-weight:800;line-height:1;margin:0 0 20px;letter-spacing:-.035em;background:linear-gradient(100deg,var(--ink) 45%,var(--a));-webkit-background-clip:text;background-clip:text;color:transparent}
+h1{font-size:clamp(24px,2.9vw,38px);font-weight:700;line-height:1.2;max-width:580px}
+.role{margin-top:22px;max-width:520px;color:var(--mute);font-size:19px}
+.cta{display:flex;gap:12px;margin-top:32px;flex-wrap:wrap}
+.btn{padding:13px 24px;border-radius:12px;text-decoration:none;font-weight:500;border:1px solid var(--line);background:var(--panel);transition:transform .25s,box-shadow .25s}
+.btn.p{background:var(--a);border-color:var(--a);color:#fff}
+.btn:hover{transform:translateY(-3px);box-shadow:0 12px 26px -10px var(--sh)}
+.in{animation:rise .9s cubic-bezier(.2,.8,.2,1) both}.in:nth-child(2){animation-delay:.1s}.in:nth-child(3){animation-delay:.2s}.in:nth-child(4){animation-delay:.3s}.in:nth-child(5){animation-delay:.4s}
+@keyframes rise{from{opacity:0;transform:translateY(34px)}}
+.scene3d{height:500px}
+.iso{position:relative;width:340px;height:340px;transform-style:preserve-3d;transform:rotateX(56deg) rotateZ(-32deg);transition:transform .2s ease-out}
+.layer{position:absolute;inset:0;transform-style:preserve-3d;transform:translateZ(var(--z))}
+.pane{width:100%;height:100%;padding:18px 20px;border-radius:16px;background:var(--panel);border:1px solid var(--line);box-shadow:0 36px 50px -22px var(--sh);animation:bob 6s ease-in-out infinite;animation-delay:var(--d);font-size:13px}
+@keyframes bob{50%{transform:translateZ(16px)}}
+.pane h4{font:700 14px Manrope,sans-serif;color:var(--a);margin-bottom:10px}
+.pane pre{font:400 12.5px/1.7 "JetBrains Mono",ui-monospace,monospace;color:var(--mute);white-space:pre-wrap}
+.pane .k{color:var(--a)}.pane .s{color:var(--b)}
+.steps{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.steps span{padding:9px 12px;border-radius:10px;background:var(--soft);font-weight:500;font-size:13px}
+.big{font:800 24px Manrope,sans-serif;margin:2px 0 10px}
+.mini{height:8px;border-radius:9px;background:var(--line);margin:9px 0;overflow:hidden}.mini i{display:block;height:100%;background:var(--a);border-radius:9px}
+.strip{overflow:hidden;border-block:1px solid var(--line);padding:15px 0;white-space:nowrap;background:var(--panel)}
+.strip div{display:inline-block;animation:mq 40s linear infinite;font:700 19px Manrope,sans-serif;color:var(--mute)}
+.strip i{color:var(--a);font-style:normal;margin:0 26px}
+@keyframes mq{to{transform:translateX(-50%)}}
+.about{display:grid;grid-template-columns:1.4fr 1fr;gap:50px;align-items:center}
+.about p{color:var(--mute);font-size:19px}
+.stats{display:grid;gap:14px}
+.stat,.res,.stage li{padding:22px 26px;border:1px solid var(--line);border-radius:18px;background:var(--panel)}
+.stat{display:flex;align-items:baseline;gap:16px}
+.stat b{font-size:44px;font-weight:800;color:var(--a)}.stat span{color:var(--mute)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.tilt{perspective:900px}
+.card{position:relative;padding:28px;border:1px solid var(--line);border-radius:20px;background:var(--panel);transform-style:preserve-3d;transition:transform .15s ease-out,box-shadow .3s;overflow:hidden;height:100%}
+.card::after{content:"";position:absolute;inset:0;background:radial-gradient(260px circle at var(--mx,50%) var(--my,0%),color-mix(in srgb,var(--a) 14%,transparent),transparent 70%);opacity:0;transition:opacity .3s;pointer-events:none}
+.card:hover{box-shadow:0 26px 50px -26px var(--sh)}.card:hover::after{opacity:1}
+.card>*{transform:translateZ(26px)}
+.card h3{font-size:23px;margin-bottom:10px;font-weight:700}
+.card p,.card li{color:var(--mute);font-size:16px}
+.tag{font-size:14px;color:var(--b);font-weight:500;margin-bottom:10px;display:block}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.chips span{padding:5px 12px;border-radius:8px;background:var(--soft);font-size:14px;font-weight:500}
+.feat{grid-column:1/-1}.card.feat{background:linear-gradient(135deg,var(--soft),var(--panel))}
+.feat h3{font-size:clamp(26px,3.6vw,38px)}
+.stage{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.stage p{color:var(--mute)}
+.stage ol{list-style:none;padding:0;display:grid;gap:10px;margin-top:22px}
+.stage li{padding:14px 20px;color:var(--mute)}.stage li b{color:var(--a);margin-right:8px;font-family:Manrope,sans-serif}
+.scene{height:440px;perspective:1100px;display:grid;place-items:center}
+.world{position:relative;width:220px;height:220px;transform-style:preserve-3d;animation:spin 26s linear infinite}
+.scene:hover .world{animation-play-state:paused}
+@keyframes spin{from{transform:rotateX(-24deg) rotateY(0)}to{transform:rotateX(-24deg) rotateY(360deg)}}
+.face{position:absolute;inset:0;display:grid;place-items:center;font-size:30px;font-weight:800;border:1px solid var(--a);border-radius:10px;background:color-mix(in srgb,var(--soft) 85%,transparent);color:var(--a);backdrop-filter:blur(4px)}
+.f1{transform:translateZ(110px)}.f2{transform:rotateY(90deg) translateZ(110px)}.f3{transform:rotateY(180deg) translateZ(110px)}.f4{transform:rotateY(-90deg) translateZ(110px)}.f5{transform:rotateX(90deg) translateZ(110px)}.f6{transform:rotateX(-90deg) translateZ(110px)}
+.demo{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:start}
+.demo .lead{color:var(--mute);margin-bottom:16px}
+.demo textarea{width:100%;min-height:140px;padding:18px;border-radius:16px;border:1px solid var(--line);background:var(--panel);color:var(--ink);font:inherit;resize:vertical}
+.samples{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.samples button{cursor:pointer;font:inherit;font-size:14px;color:var(--ink);background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:7px 13px;text-align:left;transition:border-color .2s,transform .2s}
+.samples button:hover{border-color:var(--a);transform:translateY(-2px)}
+.res{padding:28px}
+.verdict{font-size:clamp(22px,2.8vw,30px);font-weight:800;margin-bottom:10px}
+.row{display:grid;grid-template-columns:110px 1fr 44px;gap:12px;align-items:center;margin:14px 0;font-size:15px}
+.track{height:10px;border-radius:99px;background:var(--line);overflow:hidden}
+.fill{height:100%;width:0;border-radius:99px;background:var(--mute);opacity:.5;transition:width .9s cubic-bezier(.2,.8,.2,1)}
+.row.top .fill{background:var(--a);opacity:1}
+.note{font-size:14px;color:var(--mute);margin-top:18px}
+.tl{border-left:2px solid var(--line);margin-left:6px;display:grid;gap:34px}
+.tl article{padding-left:30px;position:relative}
+.tl article::before{content:"";position:absolute;left:-8px;top:8px;width:14px;height:14px;border-radius:50%;background:var(--a);box-shadow:0 0 0 5px var(--soft)}
+.tl small{color:var(--b);font-size:15px;font-weight:500}.tl h3{font-size:22px;margin:4px 0 8px}.tl li{color:var(--mute);margin-left:18px;margin-bottom:6px}
+.edu{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.contact{text-align:center;padding-bottom:150px}.contact h2{margin-inline:auto}
+.mail{font-size:clamp(22px,4.4vw,52px);font-weight:800;text-decoration:none;color:var(--a);word-break:break-all}
+.links{display:flex;justify-content:center;gap:12px;margin-top:34px;flex-wrap:wrap}
+footer{text-align:center;color:var(--mute);font-size:14px;padding:0 5vw 40px}
+@media(max-width:860px){.hero-in,.about,.stage,.demo{grid-template-columns:1fr}.scene3d{height:400px;transform:scale(.78)}.scene{transform:scale(.85)}section{padding:80px 5vw}}
+.board{position:absolute;inset:0;border-radius:24px;background:var(--panel);border:1px solid var(--line);box-shadow:0 50px 60px -26px var(--sh);overflow:hidden}
+.board::before{content:"";position:absolute;inset:0;background:linear-gradient(var(--line) 1px,transparent 1px) 0 0/22px 22px,linear-gradient(90deg,var(--line) 1px,transparent 1px) 0 0/22px 22px}
+.board::after{content:"";position:absolute;inset:-50%;background:conic-gradient(from 0deg,transparent 0 78%,color-mix(in srgb,var(--a) 32%,transparent) 92%,transparent);animation:sweep 6s linear infinite}
+@keyframes sweep{to{transform:rotate(360deg)}}
+.die{position:absolute;inset:80px;border-radius:18px;transform:translateZ(34px);transform-style:preserve-3d;background:linear-gradient(145deg,var(--a),color-mix(in srgb,var(--a) 55%,#0a1230));box-shadow:inset 0 0 0 1px rgba(255,255,255,.28),0 0 50px color-mix(in srgb,var(--a) 50%,transparent);display:grid;place-items:center;color:#fff;text-align:center;animation:glow 3.4s ease-in-out infinite}
+.die::before,.die::after{content:"";position:absolute;inset:0;border-radius:18px;background:color-mix(in srgb,var(--a) 65%,#0a1230)}
+.die::before{transform:translateZ(-10px)}.die::after{transform:translateZ(-22px);background:#0a1230;opacity:.7}
+.die b{display:block;font:800 66px/1 Manrope,sans-serif;letter-spacing:-.04em}
+.die small{font:500 13px Inter,sans-serif;opacity:.85}
+@keyframes glow{50%{box-shadow:inset 0 0 0 1px rgba(255,255,255,.28),0 0 90px color-mix(in srgb,var(--a) 80%,transparent)}}
+.pins{position:absolute;transform:translateZ(8px);background:repeating-linear-gradient(90deg,var(--mute) 0 6px,transparent 6px 17px);opacity:.65}
+.pins.pv{background:repeating-linear-gradient(0deg,var(--mute) 0 6px,transparent 6px 17px)}
+.t3{position:absolute;transform:translateZ(105px) rotateZ(32deg) rotateX(-56deg);padding:8px 18px;border-radius:10px;background:var(--panel);border:1px solid var(--line);box-shadow:0 14px 26px -10px var(--sh);font:700 14px Manrope,sans-serif;white-space:nowrap;animation:tb 5s ease-in-out infinite;animation-delay:var(--d)}
+@keyframes tb{50%{transform:translateZ(125px) rotateZ(32deg) rotateX(-56deg)}}
+@property --k{syntax:"<number>";inherits:true;initial-value:1}
+.stairs{position:relative;width:440px;height:140px;transform-style:preserve-3d;transform:rotateX(58deg) rotateZ(-40deg);animation:sway 9s ease-in-out infinite alternate}
+@keyframes sway{from{transform:rotateX(58deg) rotateZ(-46deg)}to{transform:rotateX(58deg) rotateZ(-34deg)}}
+.plate{position:absolute;inset:-34px;border-radius:22px;background:var(--panel);border:1px solid var(--line);box-shadow:0 44px 50px -22px var(--sh);transform:translateZ(-1px)}
+.plate::before{content:"";position:absolute;inset:0;border-radius:22px;background:linear-gradient(var(--line) 1px,transparent 1px) 0 0/22px 22px,linear-gradient(90deg,var(--line) 1px,transparent 1px) 0 0/22px 22px}
+.bw{position:absolute;top:30px;width:80px;height:80px;transform-style:preserve-3d;animation:grow 1.8s cubic-bezier(.2,.8,.2,1) both}
+.bw:nth-child(3){animation-delay:.15s}.bw:nth-child(4){animation-delay:.3s}.bw:nth-child(5){animation-delay:.45s}
+@keyframes grow{from{--k:.02}}
+.blk{position:absolute;inset:0;transform-style:preserve-3d;transform:translateZ(calc(var(--k)*40px)) scale3d(1,1,var(--k))}
+.blk i{position:absolute;inset:0;border-radius:3px}
+.fu{transform:translateZ(40px);background:var(--soft);border:1px solid var(--a)}
+.fa{transform:rotateY(90deg) translateZ(40px)}.fb{transform:rotateY(-90deg) translateZ(40px)}
+.fa,.fb{background:color-mix(in srgb,var(--a) 85%,#0a1230)}
+.fc{transform:rotateX(90deg) translateZ(40px)}.fd{transform:rotateX(-90deg) translateZ(40px)}
+.fc,.fd{background:color-mix(in srgb,var(--a) 60%,#0a1230)}
+.lab{position:absolute;left:50%;top:50%;transform:translateZ(calc(var(--k)*80px + 46px)) rotateZ(40deg) rotateX(-58deg) translate(-50%,-50%);padding:6px 16px;border-radius:10px;background:var(--panel);border:1px solid var(--line);box-shadow:0 12px 22px -10px var(--sh);font:700 15px Manrope,sans-serif;white-space:nowrap}
+@media(max-width:520px){.scene{transform:scale(.68)}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div id="bar"></div>
+<nav><b>J. Muneeswari</b><div><a href="#about">About</a><a href="#demo">Demo</a><a href="#projects">Projects</a><a href="#experience">Experience</a><a class="go" href="#contact">Contact</a></div></nav>
+
+<section id="hero">
+<div class="floor"></div>
+<div class="hero-in">
+<div>
+<p class="nm in">J. Muneeswari</p>
+<h1 class="in">I build NLP and machine learning systems that people can actually use.</h1>
+<p class="role in">Python-first AI developer. B.Tech in AI and Data Science, with two internships and four end-to-end ML projects.</p>
+<div class="cta in"><a class="btn p" href="#projects">View projects</a><a class="btn" href="mailto:munisha.j276@gmail.com">Email me</a><a class="btn" href="https://github.com/munishaj276-coder" target="_blank" rel="noopener">GitHub</a><a class="btn" href="https://www.linkedin.com/in/muneeswari-j-a2a78027b/" target="_blank" rel="noopener">LinkedIn</a></div>
+</div>
+<div class="scene3d" id="iso" aria-hidden="true"></div>
+</div>
+</section>
+
+<div class="strip" aria-hidden="true"><div id="mq"></div></div>
+
+<section id="about">
+<h2>Models that read, predict and ship.</h2>
+<div class="about">
+<p>I'm a B.Tech Artificial Intelligence and Data Science student who works Python-first. Across two internships and four projects I've trained ML and NLP models and put them behind Flask APIs and Streamlit apps so people can actually use them. Right now I'm learning LLM APIs, RAG and AI agents, and I'm looking for a Junior AI Developer role.</p>
+<div class="stats">
+<div class="stat"><b>8.04</b><span>CGPA through 6th semester</span></div>
+<div class="stat"><b>2</b><span>internships completed</span></div>
+<div class="stat"><b>4</b><span>AI projects built</span></div>
+</div></div>
+</section>
+
+<section id="stack">
+<div class="stage">
+<div><h2>From raw data to a working app.</h2>
+<p>Every project follows the same path, so a model never stays stuck in a notebook.</p>
+<ol><li><b>Data</b>Clean, engineer features and handle missing values with Pandas.</li><li><b>Model</b>Train and compare models, then judge them with MAE, RMSE and R².</li><li><b>API</b>Serve predictions through Flask or Express.js REST endpoints.</li><li><b>App</b>Put a Streamlit or React front end on top so people can use it.</li></ol></div>
+<div class="scene" aria-hidden="true"><div class="stairs" id="stairs"><div class="plate"></div></div></div>
+</div>
+</section>
+
+<section id="demo">
+<h2>Try my Tanglish classifier.</h2>
+<div class="demo">
+<div><p class="lead">Type a grievance the way people really write it, in Tamil and English mixed, and watch it get sorted.</p>
+<textarea id="tx" aria-label="Type a grievance in Tanglish">Engal theruvil 3 naala thanni varala, tap-la water illa</textarea>
+<div class="samples"><button>Street light eriyala, current cut aagudhu daily</button><button>Road-la periya gundu kuzhi irukku</button><button>Kuppai edukkave illa, drain smell romba iruku</button></div></div>
+<div class="res" aria-live="polite"><div class="verdict" id="vd"></div><div id="rows"></div><p class="note">This is a quick keyword demo to show the idea. The real project uses TF-IDF with SVM, then multilingual Sentence-BERT embeddings.</p></div>
+</div>
+</section>
+
+<section id="skills">
+<h2>What I work with.</h2>
+<div class="grid">
+<div class="tilt"><div class="card"><h3>AI and ML</h3><p>Classical models, NLP and embeddings, evaluated properly.</p><div class="chips"><span>Scikit-learn</span><span>NLP</span><span>TF-IDF</span><span>Sentence-BERT</span><span>SVM</span><span>Random Forest</span><span>Clustering</span><span>MAE / RMSE / R²</span></div></div></div>
+<div class="tilt"><div class="card"><h3>Languages</h3><p>Python first, with a solid base in the rest.</p><div class="chips"><span>Python</span><span>Java</span><span>JavaScript</span><span>C</span><span>C++</span></div></div></div>
+<div class="tilt"><div class="card"><h3>Backend and data</h3><p>APIs and storage that models can sit behind.</p><div class="chips"><span>Flask</span><span>REST APIs</span><span>Express.js</span><span>Node.js</span><span>MongoDB</span><span>MySQL</span><span>SQLite</span><span>PyMongo</span></div></div></div>
+<div class="tilt"><div class="card"><h3>Prototyping and web</h3><p>Fast front ends to show what a model does.</p><div class="chips"><span>Streamlit</span><span>Pandas</span><span>Matplotlib</span><span>Seaborn</span><span>Power BI</span><span>React.js</span><span>HTML5</span><span>CSS3</span><span>Git</span></div></div></div>
+</div>
+</section>
+
+<section id="projects">
+<h2>Things I've built.</h2>
+<div class="grid">
+<div class="tilt feat"><div class="card feat"><span class="tag">NLP</span><h3>Tanglish Grievance Classification</h3><p>Classifies grievances written in Tanglish, the Tamil-English mix people actually type. It began as a TF-IDF and SVM baseline, then moved to multilingual Sentence-BERT embeddings through sentence-transformers. A Streamlit front end and SQLite storage turn it into a usable tool.</p><div class="chips"><span>Python</span><span>Scikit-learn</span><span>Sentence-BERT</span><span>Streamlit</span><span>SQLite</span></div></div></div>
+<div class="tilt"><div class="card"><span class="tag">2024 - 2025</span><h3>Smart Farmer Marketplace</h3><p>A full-stack Flask marketplace for farmers and buyers to trade directly, with clearer prices and no middlemen. It includes a crop price prediction model, and storage was migrated to MongoDB without breaking logins or the ML features.</p><div class="chips"><span>Flask</span><span>MongoDB</span><span>REST API</span><span>Scikit-learn</span></div></div></div>
+<div class="tilt"><div class="card"><span class="tag">2025</span><h3>AI-Based Air Quality Prediction</h3><p>A Random Forest regression model that predicts AQI from six pollutants: PM2.5, PM10, NO2, SO2, CO and O3. Feature importance shows which pollutants drive the result most.</p><div class="chips"><span>Python</span><span>Scikit-learn</span><span>Random Forest</span></div></div></div>
+<div class="tilt"><div class="card"><span class="tag">2026</span><h3>Gas Turbine Emission Prediction</h3><p>A Random Forest regressor that estimates CO emissions from five years of turbine sensor data. Scored with MAE, RMSE and R², with feature ranking to explain what drives emissions.</p><div class="chips"><span>Python</span><span>Pandas</span><span>Scikit-learn</span></div></div></div>
+</div>
+</section>
+
+<section id="experience">
+<h2>Where I've worked.</h2>
+<div class="tl">
+<article><small>Jun 2025 - Jul 2025</small><h3>Full Stack Developer Intern, Elysium Techlabs</h3><ul><li>Connected 8+ Express.js REST endpoints to a React front end for product listings and order processing.</li><li>Designed a normalized MongoDB schema across 5+ collections for catalogs and orders.</li><li>Built 10+ reusable React components for an e-commerce platform.</li></ul></article>
+<article><small>Feb 2025</small><h3>Machine Learning Intern, Elysium Technologies</h3><ul><li>Trained and evaluated 5+ regression, classification and clustering models with Scikit-learn.</li><li>Cleaned and preprocessed 1,000+ records, which improved model accuracy.</li></ul></article>
+</div>
+</section>
+
+<section id="education">
+<h2>Education and learning.</h2>
+<div class="edu">
+<div class="tilt"><div class="card"><span class="tag">Sep 2023 - May 2027</span><h3>B.Tech, AI and Data Science</h3><p>Ramco Institute of Technology, Rajapalayam. CGPA 8.04 / 10.</p></div></div>
+<div class="tilt"><div class="card"><span class="tag">2023</span><h3>HSC, Computer Science</h3><p>78%. SSLC 100% (2021).</p></div></div>
+<div class="tilt"><div class="card"><span class="tag">Certifications</span><h3>Always learning</h3><p>AI Fluency (Anthropic), Introduction to AI, EDA with Pandas, Java Multithreading, Cybersecurity foundations, Networking basics.</p></div></div>
+</div>
+</section>
+
+<section id="contact" class="contact">
+<h2>Let's build something intelligent.</h2>
+<a class="mail" href="mailto:munisha.j276@gmail.com">munisha.j276@gmail.com</a>
+<div class="links"><a class="btn p" href="https://www.linkedin.com/in/muneeswari-j-a2a78027b/" target="_blank" rel="noopener">LinkedIn</a><a class="btn" href="https://github.com/munishaj276-coder" target="_blank" rel="noopener">GitHub</a><a class="btn" href="tel:+919566472064">+91 95664 72064</a></div>
+<p style="margin-top:26px;color:var(--mute)">Rajapalayam, Tamil Nadu. Open to Junior AI Developer roles.</p>
+</section>
+<footer>© 2026 J. Muneeswari</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+const sk=["Python","NLP","Sentence-BERT","Scikit-learn","Flask","Streamlit","Random Forest","MongoDB","React","REST APIs","TF-IDF","Pandas"];
+document.getElementById("mq").innerHTML=sk.map(s=>s+"<i>/</i>").join("").repeat(2);
+document.querySelectorAll(".tilt").forEach(t=>{const c=t.firstElementChild;
+t.addEventListener("pointermove",e=>{const r=t.getBoundingClientRect(),x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height;
+c.style.transform=`rotateY(${(x-.5)*12}deg) rotateX(${(.5-y)*12}deg)`;c.style.setProperty("--mx",x*100+"%");c.style.setProperty("--my",y*100+"%")});
+t.addEventListener("pointerleave",()=>{c.style.transform=""})});
+const stairs=document.getElementById("stairs");
+["Data","Model","API","App"].forEach((t,i)=>stairs.insertAdjacentHTML("beforeend",`<div class="bw" style="left:${24+i*104}px;--k:${[.75,1.5,2.25,3][i]}"><div class="blk"><i class="fu"></i><i class="fa"></i><i class="fb"></i><i class="fc"></i><i class="fd"></i></div><span class="lab">${t}</span></div>`));
+(function(){
+const host=document.getElementById("iso");if(!host||!window.THREE)return;
+const T=THREE,css=n=>getComputedStyle(document.documentElement).getPropertyValue(n).trim(),N=4200;
+const rd=new T.WebGLRenderer({antialias:true,alpha:true});rd.setPixelRatio(Math.min(devicePixelRatio,2));host.appendChild(rd.domElement);
+host.style.cssText+=";position:relative;cursor:pointer";
+const sc=new T.Scene(),cam=new T.PerspectiveCamera(42,1,.1,100);cam.position.set(0,0,12);
+const R=Math.random,P=Math.PI*2;
+const shapes=[
+ ["Data",()=>{const a=[];for(let i=0;i<N;i++){const y=1-2*(i+.5)/N,r=Math.sqrt(1-y*y),t=i*2.39996;a.push(3.1*r*Math.cos(t),3.1*y,3.1*r*Math.sin(t))}return a}],
+ ["Model",()=>{const a=[];for(let i=0;i<N;i++){const t=R()*P,q=R()*P,r=1+.32*Math.cos(3*t),k=.28;a.push((r*Math.cos(2*t)+k*Math.cos(q))*2.2,(r*Math.sin(2*t)+k*Math.sin(q))*2.2,.32*Math.sin(3*t)*2.2*2+k*Math.cos(q+t))}return a}],
+ ["API",()=>{const a=[],s=2.4;for(let i=0;i<N;i++){const f=R()*6|0,u=(R()*2-1)*s,v=(R()*2-1)*s,w=f%2?s:-s,c=[[w,u,v],[u,w,v],[u,v,w]][f%3];a.push(...c)}return a}],
+ ["App",()=>{const a=[];for(let i=0;i<N;i++){const t=(i/N)*P*3-P*1.5,k=i%3;if(k<2){const ph=k*Math.PI;a.push(Math.cos(t+ph)*1.7,t*.68,Math.sin(t+ph)*1.7)}else{const t2=((R()*2-1)*P*1.5),s=R();a.push(Math.cos(t2)*1.7*(1-2*s),t2*.68,Math.sin(t2)*1.7*(1-2*s))}}return a}]
+].map(([n,f])=>({n,p:Float32Array.from(f())}));
+const cur=Float32Array.from(shapes[0].p),spd=Float32Array.from({length:N},()=>.025+R()*.07),col=new Float32Array(N*3);
+const geo=new T.BufferGeometry();geo.setAttribute("position",new T.BufferAttribute(cur,3));geo.setAttribute("color",new T.BufferAttribute(col,3));
+const mat=new T.PointsMaterial({size:.055,vertexColors:true,transparent:true,opacity:.9,sizeAttenuation:true});
+const pts=new T.Points(geo,mat);sc.add(pts);
+function recolor(){const a=new T.Color(css("--a")),b=new T.Color(css("--b")),c=new T.Color();
+for(let i=0;i<N;i++){c.copy(a).lerp(b,Math.min(1,Math.max(0,(cur[i*3+1]+3.4)/6.8)+(R()-.5)*.25));col.set([c.r,c.g,c.b],i*3)}geo.attributes.color.needsUpdate=true}
+recolor();matchMedia("(prefers-color-scheme:dark)").addEventListener("change",()=>setTimeout(recolor,50));
+const tag=document.createElement("div");tag.style.cssText="position:absolute;left:50%;bottom:8px;transform:translateX(-50%);display:flex;gap:8px;font:700 14px Manrope,Inter,sans-serif";
+const chips=shapes.map((s,i)=>{const e=document.createElement("button");e.textContent=s.n;e.type="button";e.style.cssText="padding:6px 16px;border-radius:999px;border:1px solid var(--line);background:var(--panel);color:var(--mute);font:inherit;cursor:pointer;transition:.25s";e.onclick=ev=>{ev.stopPropagation();go(i,true)};tag.appendChild(e);return e});host.appendChild(tag);
+let k=0,timer;function go(i,manual){k=i;chips.forEach((e,j)=>{e.style.background=j===k?css("--a"):css("--panel");e.style.color=j===k?"#fff":css("--mute");e.style.borderColor=j===k?css("--a"):css("--line")});clearInterval(timer);timer=setInterval(()=>go((k+1)%4),manual?7000:4800)}
+host.addEventListener("click",()=>go((k+1)%4,true));go(0);
+function size(){const w=host.clientWidth,h=host.clientHeight;rd.setSize(w,h,false);rd.domElement.style.cssText="width:100%;height:100%;display:block";cam.aspect=w/h;cam.position.z=w<420?15:12;cam.updateProjectionMatrix()}
+new ResizeObserver(size).observe(host);size();
+let tx=0,ty=0,on=true,t0=0;
+document.getElementById("hero").addEventListener("pointermove",e=>{tx=(e.clientX/innerWidth-.5)*1.2;ty=(e.clientY/innerHeight-.5)*.6});
+new IntersectionObserver(e=>{on=e[0].isIntersecting;if(on)loop()}).observe(host);
+const still=matchMedia("(prefers-reduced-motion:reduce)").matches;
+function loop(){if(!on)return;t0+=.01;const tg=shapes[k].p;
+for(let i=0;i<N*3;i++)cur[i]+=(tg[i]-cur[i])*spd[i/3|0];
+geo.attributes.position.needsUpdate=true;
+pts.rotation.y+=.004+(tx-pts.rotation.y%P*0)*0;pts.rotation.x+=((ty+Math.sin(t0*.7)*.15)-pts.rotation.x)*.05;pts.position.x+=(tx*1.2-pts.position.x)*.04;
+rd.render(sc,cam);if(!still)requestAnimationFrame(loop)}
+loop();
+})();
+const inp=document.getElementById("tx"),vd=document.getElementById("vd"),rowsEl=document.getElementById("rows");
+const cats={"Water supply":["thanni","tanni","water","kudineer","tap","pipe","borewell"],"Electricity":["current","power","eb","light","transformer","electric"],"Roads":["road","pothole","gundu","kuzhi","bridge","signal","traffic"],"Sanitation":["kuppai","garbage","drain","sewage","kazhivu","smell","waste"],"Other":[]};
+const names=Object.keys(cats);
+rowsEl.innerHTML=names.map((n,i)=>`<div class="row" id="r${i}"><span>${n}</span><div class="track"><div class="fill"></div></div><b>0%</b></div>`).join("");
+function classify(){const t=inp.value.toLowerCase().trim();let pct=names.map(()=>0),best=-1;
+if(t){const raw=names.map(n=>cats[n].filter(w=>t.includes(w)).length*3+(n==="Other"?1:.3));const sum=raw.reduce((a,b)=>a+b,0);pct=raw.map(v=>Math.round(v/sum*100));best=pct.indexOf(Math.max(...pct))}
+vd.textContent=best<0?"Type a grievance to begin":"Looks like: "+names[best];
+names.forEach((n,i)=>{const r=document.getElementById("r"+i);r.classList.toggle("top",i===best);r.querySelector(".fill").style.width=pct[i]+"%";r.querySelector("b").textContent=pct[i]+"%"})}
+inp.addEventListener("input",classify);
+document.querySelectorAll(".samples button").forEach(b=>b.addEventListener("click",()=>{inp.value=b.textContent;classify()}));
+setTimeout(classify,500);
+const bar=document.getElementById("bar");
+addEventListener("scroll",()=>{bar.style.width=(scrollY/(document.documentElement.scrollHeight-innerHeight)*100)+"%"},{passive:true});
+</script>
+</body>
 </html>
